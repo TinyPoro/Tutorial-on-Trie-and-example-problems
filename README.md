@@ -3,7 +3,7 @@
 
 # Hướng dẫn về Trie và các ví dụ
 
-Trong bài viết này tôi sẽ nói về Tries và khái niểm tổng quát được sử dụng trong thao tác nhỏ của vấn đề. Chúng ta sẽ thấy 2-3 vấn đề mà trie rất hữu ích
+Trong bài viết này tôi sẽ nói về Tries và khái niểm tổng quát được sử dụng trong 1  sốthao tác của vấn đề. Chúng ta sẽ thấy 2-3 vấn đề mà trie rất hữu ích
 
 Đầu tiên chúng ta xem một trie là gì. Trie có thể lưu trữ thông tin về các khóa/số/chuỗi gọn gàng trong một cây.
 Tries bao gồm các , trong đó mỗi node lưu trữ một ký tự/bit. Chúng ta có thể chèn chuỗi/số mới cho phù hợp  
@@ -79,7 +79,7 @@ Với mỗi index i=1 đến N, chúng ta có thể đếm số lượng mảng 
     
 
   
-query(q,k) rả về số lượng các số nguyên đã tồn tại thành cấu trúc mà khi lấy XOR với q trả về một số nguyên nhỏ hơn k.
+query(q,k) trả về số lượng các số nguyên đã tồn tại thành cấu trúc mà khi lấy XOR với q trả về một số nguyên nhỏ hơn k.
 Chúng ta so sánh các bit tương ứng của q và k, bắt đầu từ các bit quan trọng nhất. Giả sử p và q là các bit tương ứng mà chúng ta đang xem xét.
 Nếu q bằng 1, và p bằng 0, thì chúng ta thực hiện điều này:  
 
@@ -116,7 +116,7 @@ Một vấn đề khác khi sử dụng Trie(yay! :P).
 
 **Vấn đề con**: Cho một nhóm có _n_ chuỗi không trống. Trong trò chơi, hai người chơi cùng nhau xây dựng từ, ban đầu từ đó trống. Người chơi theo lần lượt. Trong lượt chơi của anh ta phải thêm một chữ cái vào cuối từ,từ kết quả phải là tiền tố của ít nhất một chuỗi trong nhóm. Một người chơi thua nếu anh ta không thể di chuyển.
 
-Chúng ta cần phải tìm người chơi nào (thứ nhất hoặc thứ hai) có khả năng chiến thắn
+Chúng ta cần phải tìm người chơi nào (thứ nhất hoặc thứ hai) có khả năng chiến thắng
 
 Vì vậy, ý tưởng ở đây là một lần nữa để xây dựng một trie của tất cả các chuỗi. Tại sao? Bởi vì một trie lưu trữ thông tin về tất cả các tiền tố.
 Bây giờ chúng ta sẽ thử đánh giá cho mỗi node nếu người chơi đầu tiên có khả năng thắng hoặc không.  Chúng ta có thể làm điều này một cách đệ quy. Với một node v, với mỗi node u sao cho u là con tức thời của v, nếu người chơi đầu tiên của node u có khả năng thua, thì sau đó người chơi đầu tiên của node v có khả năng chiến thắng.
